@@ -43,7 +43,7 @@ posts = [
                 Весь этот день я хлопотал  около вещей: укрывал и
                 укутывал их, чтобы не испортились от дождя.''',
     },
-] 
+]
 
 
 def index(request):
@@ -51,14 +51,16 @@ def index(request):
     context = {'posts': reversed(posts)}
     return render(request, template, context)
 
+
 def post_detail(request, id):
     try:
         context = {'post': posts[id]}
     except IndexError:
         return redirect('blog:index')
-       
+
     template = 'blog/detail.html'
     return render(request, template, context)
+
 
 def category_posts(request, category_slug):
     template = 'blog/category.html'
