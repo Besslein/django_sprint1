@@ -15,23 +15,23 @@
 Клонировать репозиторий:
 
 <code>git clone <https or SSH URL></code>
-
+<hr>
 Перейти в папку проекта:
 
-cd django_sprint1
-
+<code>cd django_sprint1</code>
+<hr>
 Создать виртуальное окружение:
 
-python -m venv venv
-
+<code>python -m venv venv</code>
+<hr>
 Активировать виртуальное окружение:
 
-source venv/Scripts/activate
-
+<code>source venv/Scripts/activate</code>
+<hr>
 Установить библиотеки:
 
-pip install -r requirements.txt
-
+<code>pip install -r requirements.txt</code>
+<hr>
 Запустить сервер django:
 
-python manage.py runserver
+<code>python manage.py runserver</code>
