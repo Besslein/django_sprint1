@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
 
-# Create your views here.
 
 posts = [
     {
@@ -47,22 +46,19 @@ posts = [
 
 
 def index(request):
-    template = 'blog/index.html'
     context = {'posts': reversed(posts)}
-    return render(request, template, context)
+    return render(request, 'blog/index.html', context)
 
 
-def post_detail(request, id):
+def post_id(request, id):
     try:
         context = {'post': posts[id]}
     except IndexError:
         return redirect('blog:index')
 
-    template = 'blog/detail.html'
-    return render(request, template, context)
+    return render(request, 'blog/detail.html', context)
 
 
 def category_posts(request, category_slug):
-    template = 'blog/category.html'
     context = {'category_slug': category_slug}
-    return render(request, template, context)
+    return render(request, 'blog/category.html', context)
