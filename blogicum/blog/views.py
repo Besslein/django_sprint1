@@ -50,9 +50,9 @@ def index(request):
     return render(request, 'blog/index.html', context)
 
 
-def post_detail(request, id):
+def post_detail(request, post_id):
     try:
-        context = {'post': posts[id]}
+        context = {'post': posts[post_id]}
     except IndexError:
         return redirect('blog:index')
 
